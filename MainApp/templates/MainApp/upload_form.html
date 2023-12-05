@@ -1,0 +1,21 @@
+<!-- MainApp/templates/upload_form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload CSV</title>
+</head>
+<body>
+    <h2>Upload CSV File</h2>
+    <form method="post" enctype="multipart/form-data" action="{% url 'upload_csv' %}">
+        {% csrf_token %}
+        <label for="file">Select CSV File:</label>
+        <input type="file" name="file" required>
+        <br>
+        <label for="timeframe">Timeframe (minutes):</label>
+        <input type="number" name="timeframe" required>
+        <br>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
